@@ -1,0 +1,82 @@
+/* === Estilo general de la página === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f6fa;
+  color: #333;
+  padding: 20px;
+}
+
+/* === Tabla principal === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+/* === Cabecera === */
+th {
+  background-color: #d63031;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  padding: 12px;
+}
+
+/* === Celdas === */
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* === Filas alternas === */
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* === Hover en fila === */
+tr:hover {
+  background-color: #ffeaea;
+  transition: 0.3s;
+}
+
+/* === Enlaces de acción === */
+a {
+  text-decoration: none;
+  color: #0984e3;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #d63031;
+  text-decoration: underline;
+}
+
+/* === Título y resumen === */
+h2, h3 {
+  color: #2d3436;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: #fff;
+  border-left: 5px solid #d63031;
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+ul li strong {
+  color: #d63031;
+}

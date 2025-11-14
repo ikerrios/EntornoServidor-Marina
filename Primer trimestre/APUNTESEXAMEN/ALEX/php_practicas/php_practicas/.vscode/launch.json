@@ -1,0 +1,14 @@
+{
+"version": "0.2.0",
+"configurations": [
+{
+    "name": "Abrir en XAMPP",
+    "type": "chrome",
+    "request": "launch",
+    "url": "http://localhost/php_practicas/index.php",
+    "webRoot": "${workspaceFolder}",
+    "runtimeExecutable": "/usr/bin/open",
+    "runtimeArgs": ["-a", "Google Chrome"]
+}
+]
+}
