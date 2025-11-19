@@ -16,7 +16,6 @@ require_once 'includes/datos_cartas.php';
 
     <?php
         foreach ($cartas as $carta => $info) {//Del array de CARTAS cojo cada nombre y lo hago otro array llamado CARTA y su información de dentro se llama info
-           
             echo $carta . " - ";
             echo $info['tipo'] . "</br>";
             echo $info['precio'] . "</br>";
