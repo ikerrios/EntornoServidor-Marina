@@ -7,8 +7,8 @@ class Parking {
     
     // Constructor: se ejecuta al crear un objeto Usuario.
     // Recibe matricula, modelo y velocidad y los asigna al objeto.
-    public function __construct($matricula, $modelo) {
-        $this -> parking = $parking;
+    public function __construct() {
+        
     }
 
     public function crearCoche($matricula, $modelo) {
@@ -66,16 +66,20 @@ class Parking {
     }
 
     public function mostrarDatosCoche($matricula) {
+        //En coche vamos almacenar el resultado de buscarMatricula(), es decir, si es null o contiene algo, este método lo busca.
         $coche = $this->buscarCoche($matricula);
 
         if($coche === null) {
             return "Error";
         }
-
+        
+        // En matricula coche va a llamar a la matrícula de este para saberla y velocidad igual.
         $matricula = $coche->getMatricula();
         $velocidad = $coche->getVelocidad();
 
+        //En datos vamos almacenar un string de la matrícula y la velocidad.
         $datos = $matricula . ": " . $velocidad . " km/h";
+        //Devolvemos el string de datos.
         return $datos;
     }
 }
