@@ -2,13 +2,44 @@
 require_once "conexion.php";
 
 class Animal {
+    // Propiedades privadas, encapsulamiento.
     protected $nombre;
     protected $edad;
     protected $tipo;
 
+    // Constructor: se ejecuta al crear un objeto Usuario.
+    // Recibe matricula, modelo y velocidad y los asigna al objeto.
     public function __construct($nombre, $edad, $tipo) {
         $this->nombre = $nombre;
         $this->edad = $edad;
+        $this->tipo = $tipo;
+    }
+
+    // --- Geters ---
+    // Métodos que permiten obtener el valor de una propiedad privada.
+    public function getNombre(){
+        return $this->nombre;
+    }
+    
+    public function getEdad() {
+        return $this->edad;
+    }
+
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    // --- Setters ---
+    // Métodos para modificar las propiedades privadas.
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    public function setEdad($edad) {
+        $this->edad = $edad;
+    }
+
+    public function setTipo($tipo) {
         $this->tipo = $tipo;
     }
 

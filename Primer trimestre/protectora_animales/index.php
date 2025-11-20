@@ -1,7 +1,5 @@
 <?php
-require_once "animal.php";
-require_once "perro.php";
-require_once "gato.php";
+require_once "modelo/animal.php";
 
 if (isset($_POST['crear_animal'])) {
     $a = new Animal($_POST['nombre'], $_POST['edad'], $_POST['tipo']);
