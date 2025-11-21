@@ -9,7 +9,31 @@ class Parking {
     // Constructor: se ejecuta al crear un objeto Usuario.
     // Recibe matricula, modelo y velocidad y los asigna al objeto.
     public function __construct() {
+        // 1. Guardamos la conexión PDO en una propiedad
         $this->db = Conexion::conectar();
+
+        // 2. Inicializamos el array interno
+        $this->parking = [];
+        
+        // 3. Preparamos y ejecutamos la consulta para cargar coches de la BD
+        $stmt = $this->db->prepare("SELECT matricula, modelo, velocidad FROM coches");
+        $stmt->execute();
+
+         // 4. Obtenemos todas las filas como array asociativo
+        $cochesBD = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 5. Recorremos cada fila y creamos objetos Coche
+        foreach ($cochesBD as $fila) {
+
+            // Creamos el objeto Coche con la matrícula y el modelo
+            $coche = new Coche($fila["matricula"], $fila["modelo"]);
+
+            // Le ponemos la velocidad real de la BD
+            $coche->setVelocidad($fila["velocidad"]);
+
+            // Lo guardamos en el array interno del Parking
+            $this->parking[$fila["matricula"]] = $coche;
+        }
     }
 
     public function crearCoche($matricula, $modelo) {
