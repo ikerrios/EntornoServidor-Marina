@@ -1,0 +1,6 @@
+
+
+# COSAS A TENER EN CUENTA
+
+# PERMISOS A CARPETAS
+# chmod 755 uploads
