@@ -9,8 +9,10 @@ class protectora {
 
     }
 
-    public function agregarAnimal() {
-        
+    public function agregar() {
+        $pdo = Conexion::conectar();
+        $stmt = $pdo->prepare("INSERT INTO animales (nombre, edad, tipo) VALUES (?, ?, ?)");
+        $stmt->execute([$this->nombre, $this->edad, $this->tipo]);
     }
 }
 
