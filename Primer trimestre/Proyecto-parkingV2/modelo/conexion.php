@@ -1,6 +1,6 @@
 <?php
 class Conexion {
-
+    private static $db = null;
     // Método estático que devuelve una conexión PDO lista para usar
     public static function conectar() {
         try {

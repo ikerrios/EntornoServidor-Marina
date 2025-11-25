@@ -1,6 +1,7 @@
 <?php
 
 require_once("coche.php");
+require_once("conexion.php");
 
 class Parking {
     private $parking = [];
@@ -19,8 +20,8 @@ class Parking {
         $stmt = $this->db->prepare("SELECT matricula, modelo, velocidad FROM coches");
         $stmt->execute();
 
-         // 4. Obtenemos todas las filas como array asociativo
-        $cochesBD = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // 4. Obtenemos todas las filas como array asociativo
+        $cochesBD = $stmt->fetchAll(PDOe::FETCH_ASSOC);
 
         // 5. Recorremos cada fila y creamos objetos Coche
         foreach ($cochesBD as $fila) {
